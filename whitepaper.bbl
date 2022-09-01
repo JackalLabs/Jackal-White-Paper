@@ -1,0 +1,131 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{tendermint}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c30f8ee7746255fb967f73ce6b1f5821}{%
+           family={Kwon},
+           familyi={K\bibinitperiod},
+           given={Jae},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c30f8ee7746255fb967f73ce6b1f5821}
+      \strng{fullhash}{c30f8ee7746255fb967f73ce6b1f5821}
+      \strng{bibnamehash}{c30f8ee7746255fb967f73ce6b1f5821}
+      \strng{authorbibnamehash}{c30f8ee7746255fb967f73ce6b1f5821}
+      \strng{authornamehash}{c30f8ee7746255fb967f73ce6b1f5821}
+      \strng{authorfullhash}{c30f8ee7746255fb967f73ce6b1f5821}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tendermint: Consensus without Mining}
+      \verb{urlraw}
+      \verb https://tendermint.com/static/docs/tendermint.pdf
+      \endverb
+      \verb{url}
+      \verb https://tendermint.com/static/docs/tendermint.pdf
+      \endverb
+      \keyw{tendermint,consesus,bft}
+    \endentry
+    \entry{cosmossdk}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3cbf118b75de584388e43e75be2e6bd1}{%
+           family={Ethan\bibnamedelima Buchman},
+           familyi={E\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Jae\bibnamedelima Kwon},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{3cbf118b75de584388e43e75be2e6bd1}
+      \strng{fullhash}{3cbf118b75de584388e43e75be2e6bd1}
+      \strng{bibnamehash}{3cbf118b75de584388e43e75be2e6bd1}
+      \strng{authorbibnamehash}{3cbf118b75de584388e43e75be2e6bd1}
+      \strng{authornamehash}{3cbf118b75de584388e43e75be2e6bd1}
+      \strng{authorfullhash}{3cbf118b75de584388e43e75be2e6bd1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cosmos Whitepaper: A Network of Distributed Ledgers}
+      \verb{urlraw}
+      \verb https://v1.cosmos.network/resources/whitepaper
+      \endverb
+      \verb{url}
+      \verb https://v1.cosmos.network/resources/whitepaper
+      \endverb
+      \keyw{cosmos,sdk}
+    \endentry
+    \entry{bech32}{online}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{Bech32}
+      \verb{urlraw}
+      \verb https://en.bitcoin.it/wiki/Bech32
+      \endverb
+      \verb{url}
+      \verb https://en.bitcoin.it/wiki/Bech32
+      \endverb
+      \keyw{bitcoin,address}
+    \endentry
+    \entry{mint}{online}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{title}{Mint Module}
+      \verb{urlraw}
+      \verb https://docs.cosmos.network/master/modules/mint/
+      \endverb
+      \verb{url}
+      \verb https://docs.cosmos.network/master/modules/mint/
+      \endverb
+      \keyw{cosmos,mint}
+    \endentry
+    \entry{cosmwasm}{online}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{title}{CosmWasm}
+      \verb{urlraw}
+      \verb https://cosmwasm.com/
+      \endverb
+      \verb{url}
+      \verb https://cosmwasm.com/
+      \endverb
+      \keyw{cosmos,smart contracts}
+    \endentry
+    \entry{dht}{online}{}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labeltitlesource}{title}
+      \field{title}{Distributed Hash Tables}
+      \verb{urlraw}
+      \verb https://docs.ipfs.tech/concepts/dht/
+      \endverb
+      \verb{url}
+      \verb https://docs.ipfs.tech/concepts/dht/
+      \endverb
+      \keyw{hash,table,distributed}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
