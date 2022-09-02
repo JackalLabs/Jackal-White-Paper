@@ -7,3 +7,5 @@
 *.run.xml
 *.synctex.gz
 *.toc
+*.blg
+*.bbl
