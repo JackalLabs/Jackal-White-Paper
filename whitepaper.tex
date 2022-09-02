@@ -8,6 +8,7 @@
             footskip=.25in]{geometry}
 
 \usepackage{amsmath}
+\usepackage{adjustbox}
 
 \usepackage{graphicx}
 
@@ -154,10 +155,12 @@ These nodes are essential as they only require the nodes below them to prove the
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=1\textwidth]{assets/protocol.png}
-\caption{The entire Jackal Protocol overview}
+\begin{adjustbox}{addcode={\begin{minipage}{\width}}{\caption{%
+    The entire Jackal Protocol overview
+    }\end{minipage}},rotate=90,center}
+    \includegraphics[width=1.3\textwidth]{assets/protocol.png}
+\end{adjustbox}
 \end{figure}
-
 The Jackal Protocol consists of seven modules, two tokens, dedicated validators, and dedicated storage providers. The modules include jklmint, lp, rns, wasm, storage, dsig, and filetree. The tokens include JKL and JWL.  These modules and tokens can be united in various ways to create secure, scalable, and decentralized applications. Users of these decentralized applications interact with the chain and each other through public and private encryption keys.
 
 \newpage
@@ -167,7 +170,7 @@ The jklmint module is a replacement for the Cosmos-SDK module: Mint \cite{mint}.
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{assets/mint.png}
+\includegraphics[width=1\textwidth]{assets/mint.png}
 \caption{}
 \end{figure}
 
@@ -179,31 +182,31 @@ The lp module allows for a native automated market maker (AMM) liquidity pools (
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{assets/lp1.png}
+\includegraphics[width=1\textwidth]{assets/lp1.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{assets/lp2.png}
+\includegraphics[width=1\textwidth]{assets/lp2.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{assets/lp3.png}
+\includegraphics[width=1\textwidth]{assets/lp3.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{assets/lp4.png}
+\includegraphics[width=1\textwidth]{assets/lp4.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{assets/lp5.png}
+\includegraphics[width=1\textwidth]{assets/lp5.png}
 \caption{}
 \end{figure}
 
@@ -211,46 +214,47 @@ The lp module allows for a native automated market maker (AMM) liquidity pools (
 
 \subsubsection{RNS}
 The RNS module is a name service that allows users to manage human-readable names when interacting with the Jackal Blockchain and other cosmos blockchains. Users can register names, list names for sale, buy names on the marketplace, and place/accept bids from other users on their names.
+\begin{figure}[!htbp]
+\centering
+\begin{adjustbox}{addcode={\begin{minipage}{\width}}{\caption{%
+    }\end{minipage}},rotate=90,center}
+    \includegraphics[width=1.3\textwidth]{assets/rns1.png}
+\end{adjustbox}
+\end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{assets/rns1.png}
+\includegraphics[width=1\textwidth]{assets/rns2.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{assets/rns2.png}
+\includegraphics[width=1\textwidth]{assets/rns3.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{assets/rns3.png}
+\includegraphics[width=1\textwidth]{assets/rns4.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{assets/rns4.png}
+\includegraphics[width=1\textwidth]{assets/rns5.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{assets/rns5.png}
+\includegraphics[width=1\textwidth]{assets/rns6.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{assets/rns6.png}
-\caption{}
-\end{figure}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.5\textwidth]{assets/rns7.png}
+\includegraphics[width=1\textwidth]{assets/rns7.png}
 \caption{}
 \end{figure}
 
@@ -262,7 +266,7 @@ Jackal incorporates the CosmWasm \cite{cosmwasm} smart contracting platform buil
 Jackal Storage is the module on-chain that determines the challenge windows \& determines the validity of proofs relating to the Jackal Proof-of-Persistence (JPOP) Protocol. It also acts as a discovery layer, similar to IPFS's Distributed Hash Tables (DHTs), allowing users to query a file and find the provider currently hosting it. \cite{dht}
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{assets/storage1.png}
+\includegraphics[width=1\textwidth]{assets/storage1.png}
 \caption{}
 \end{figure}
 
@@ -274,7 +278,7 @@ The dSig module is a digital signature service that allows users to collect sign
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{assets/dsig.png}
+\includegraphics[width=0.9\textwidth]{assets/dsig.png}
 \caption{}
 \end{figure}
 
@@ -309,45 +313,46 @@ For users to view files, they need access to the symmetric keys used to encrypt 
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/filetree3.png}
+\includegraphics[width=1\textwidth]{assets/filetree9.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/filetree4.png}
+\includegraphics[width=0.7\textwidth]{assets/filetree3.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/filetree5.png}
+\includegraphics[width=1\textwidth]{assets/filetree4.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/filetree6.png}
+\includegraphics[width=1\textwidth]{assets/filetree5.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/filetree7.png}
+\includegraphics[width=1\textwidth]{assets/filetree6.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/filetree8.png}
+\includegraphics[width=1\textwidth]{assets/filetree7.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/filetree9.png}
+\includegraphics[width=1\textwidth]{assets/filetree8.png}
 \caption{}
 \end{figure}
+
 
 \newpage
 \subsection{Storage Providers}
@@ -355,31 +360,34 @@ A Jackal Storage Provider is a dedicated web server optimized for data storage t
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{assets/providers1.png}
+\begin{adjustbox}{addcode={\begin{minipage}{\width}}{\caption{%
+    }\end{minipage}},rotate=90,center}
+    \includegraphics[width=1.4\textwidth]{assets/providers1.png}
+\end{adjustbox}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=1\textwidth]{assets/providers2.png}
 \caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/providers2.png}
+\includegraphics[width=1\textwidth]{assets/providers3.png}
 \caption{}
 \end{figure}
 
-\begin{figure}[!htbp]
+\begin{figure}[hbt!]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/providers3.png}
+\includegraphics[width=0.7\textwidth]{assets/providers4.png}
 \caption{}
 \end{figure}
 
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.5\textwidth]{assets/providers4.png}
-\caption{}
-\end{figure}
-
+\clearpage
 \newpage
 \subsection{Validators}
-The Jackal Validators are web servers that are secure, dedicated machines that participate in the consensus protocol by broadcasting cryptographic signatures, or votes, to agree upon the next block. Voting power is determined by the amount of staking tokens delegated by non-validators and bonded as collateral to earn a reward. These non-validators, or delegators, incur the risk of getting punished (slashed) if the delegate validator gets hacked or violates the protocol.
+The Jackal Validators are secure web servers, dedicated machines that participate in the consensus protocol by broadcasting cryptographic signatures, or votes, to agree upon the next block. Voting power is determined by the amount of staking tokens delegated by non-validators and bonded as collateral to earn a reward. These non-validators, or delegators, incur the risk of getting punished (slashed) if the delegate validator gets hacked or violates the protocol.
 
 \subsection{Tokens}
 \subsubsection{JKL}
