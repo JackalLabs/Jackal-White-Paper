@@ -168,6 +168,7 @@ The jklmint module is a replacement for the Cosmos-SDK module: Mint \cite{mint}.
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.7\textwidth]{assets/mint.png}
+\caption{}
 \end{figure}
 
 \newpage
@@ -179,26 +180,31 @@ The lp module allows for a native automated market maker (AMM) liquidity pools (
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.7\textwidth]{assets/lp1.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/lp2.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/lp3.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/lp4.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/lp5.png}
+\caption{}
 \end{figure}
 
 \newpage
@@ -209,36 +215,43 @@ The RNS module is a name service that allows users to manage human-readable name
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.7\textwidth]{assets/rns1.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/rns2.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/rns3.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/rns4.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/rns5.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/rns6.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/rns7.png}
+\caption{}
 \end{figure}
 
 \newpage
@@ -250,18 +263,19 @@ Jackal Storage is the module on-chain that determines the challenge windows \& d
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.7\textwidth]{assets/storage1.png}
+\caption{}
 \end{figure}
 
 \paragraph{Interaction Outline}
 A user first sends a file to an available Storage Provider. A list of Storage Providers can be found on the blockchain, and providers can deny any incoming request if they wish not to store new files. After receiving the entire file, the Storage Provider keeps that file in memory and posts a contract to the blockchain. If the sender does not sign the contract in X blocks (configurable by the Storage Provider), then the file is removed from memory, and the contract is burned. However, if the user within the given blocks signs the contract, the file is committed to the Storage Provider's hard storage, and the challenge windows start being created for an active contract.
 
-\newpage
 \subsubsection{dSig}
 The dSig module is a digital signature service that allows users to collect signatures from multiple registered users on the Jackal Blockchain. Users can create 'forms' associated with a unique file stored on Jackal and add signees (users) to collect their signatures. The signees have the following options to respond: Approve, Deny, Abstain, and No Response (Default). The form can execute a custom function after all users have voted to Approve the form.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.7\textwidth]{assets/dsig.png}
+\caption{}
 \end{figure}
 
 \newpage
@@ -272,6 +286,7 @@ The File Tree module is responsible for keeping records of a user's files and or
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.4\textwidth]{assets/filetree1.png}
+\caption{}
 \end{figure}
 
 \paragraph{Folder Abstraction}
@@ -283,6 +298,7 @@ Storing file entries on-chain is a hurdle being that the chain itself is public.
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.4\textwidth]{assets/filetree2.png}
+\caption{}
 \end{figure}
 
 \newpage
@@ -294,36 +310,43 @@ For users to view files, they need access to the symmetric keys used to encrypt 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{assets/filetree3.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{assets/filetree4.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{assets/filetree5.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{assets/filetree6.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{assets/filetree7.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{assets/filetree8.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{assets/filetree9.png}
+\caption{}
 \end{figure}
 
 \newpage
@@ -333,21 +356,25 @@ A Jackal Storage Provider is a dedicated web server optimized for data storage t
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{assets/providers1.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{assets/providers2.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{assets/providers3.png}
+\caption{}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{assets/providers4.png}
+\caption{}
 \end{figure}
 
 \newpage
