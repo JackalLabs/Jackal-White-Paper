@@ -123,7 +123,7 @@ When sharing files, we can semi-repeat this process by first decrypting the key 
 \section{Jackal Proof of Persistence (JPOP)}
 \subsection{Intro}
 Jackal Storage functions by a Proof-of-Storage algorithm we call Proof-of-Persistence. The Jackal Proof-of-Persistence (JPOP) works through a series of contracts between the storage provider and the user. These contracts contain the Merkle Tree root hash of the file and the information required to prove ownership of the file. Storage Providers are responsible for posting Merkle Proofs within a challenge window determined by the blockchain. These challenge windows need the provider to post the raw chunk of data corresponding to the index of the challenge window alongside the required Merkle Hashes to prove the data belongs to the Merkle Root stored on the contract. These challenge indexes are chosen randomly by the blockchain using a block-hash-based random number generator paired with a random data oracle.
-If a Storage Provider successfully posts a Merkle Proof within the challenge window for the contract and the Validators verify the data to be valid Merkle Proofs for the challenge index, the Storage Provider is rewarded. Storage Provider rewards are proportional to the file size the contract is associated with relative to every other active contract on the network. If a Storage Provider fails to provide a valid proof within the allotted time frame, the contract is struck with a missed proof. After X missed proofs, the contract is burned, and the User is alerted the next time they query the contract. For every contract burned through missing proofs, the Storage Provider is struck with a penalty that remains on their record for a period of time adjustable through governance.
+If a Storage Provider successfully posts a Merkle Proof within the challenge window for the contract and the Validators verify the data to be valid Merkle Proofs for the challenge index, the Storage Provider is rewarded. Storage Provider rewards are proportional to the file size the contract is associated with relative to every other active contract on the network. If a Storage Provider fails to provide a valid proof within the allotted time frame, the contract is removed from the provider. For every contract burned through missing proofs, the Storage Provider is struck with a penalty that remains on their record for a period of time adjustable through governance.
 \subsection{Building the Trees}
 Merkle Trees are a core component of the JPOP mechanism; thus, it is important to outline how these trees are used to create efficient and trustworthy proofs. When saving a file for the first time, providers split each file into 1kb chunks. Providers must also hash the entire file to create a folder to house every chunk, the following diagram displays this.
 \begin{figure}[!htbp]
@@ -263,7 +263,7 @@ The RNS module is a name service that allows users to manage human-readable name
 Jackal incorporates the CosmWasm \cite{cosmwasm} smart contracting platform built for the Cosmos Ecosystem. The primary programming language used in this module is Rust for building secure and multi-chain smart contracts. Yet, any language that can be compiled into WASM can be supported as they become available. 
 
 \subsubsection{Storage}
-Jackal Storage is the module on-chain that determines the challenge windows \& determines the validity of proofs relating to the Jackal Proof-of-Persistence (JPOP) Protocol. It also acts as a discovery layer, similar to IPFS's Distributed Hash Tables (DHTs), allowing users to query a file and find the provider currently hosting it. \cite{dht}
+Jackal Storage is the module on-chain that determines the challenge windows of files and validates proofs relating to the Jackal Proof-of-Persistence (JPOP) Protocol. It also acts as a discovery layer, similar to IPFS's Distributed Hash Tables (DHTs), allowing users to query a file and find a list of providers currently hosting it. \cite{dht}
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=1\textwidth]{assets/storage1.png}
@@ -272,15 +272,6 @@ Jackal Storage is the module on-chain that determines the challenge windows \& d
 
 \paragraph{Interaction Outline}
 A user first sends a file to an available Storage Provider. A list of Storage Providers can be found on the blockchain, and providers can deny any incoming request if they wish not to store new files. After receiving the entire file, the Storage Provider keeps that file in memory and posts a contract to the blockchain. If the sender does not sign the contract in X blocks (configurable by the Storage Provider), then the file is removed from memory, and the contract is burned. However, if the user within the given blocks signs the contract, the file is committed to the Storage Provider's hard storage, and the challenge windows start being created for an active contract.
-
-\subsubsection{dSig}
-The dSig module is a digital signature service that allows users to collect signatures from multiple registered users on the Jackal Blockchain. Users can create 'forms' associated with a unique file stored on Jackal and add signees (users) to collect their signatures. The signees have the following options to respond: Approve, Deny, Abstain, and No Response (Default). The form can execute a custom function after all users have voted to Approve the form.
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.9\textwidth]{assets/dsig.png}
-\caption{}
-\end{figure}
 
 \newpage
 \subsubsection{File Tree}
@@ -356,7 +347,7 @@ For users to view files, they need access to the symmetric keys used to encrypt 
 
 \newpage
 \subsection{Storage Providers}
-A Jackal Storage Provider is a dedicated web server optimized for data storage that accepts incoming files from users and creates contracts for the users to approve. These contracts last until the user either cancels them, or the provider itself goes offline.
+A Jackal Storage Provider is a dedicated web server optimized for data storage that accepts incoming files from users post-file creation and submits proofs for the files.
 
 \begin{figure}[!htbp]
 \centering
@@ -411,11 +402,8 @@ The JKL token can act as collateral for validators, storage providers, and other
 \paragraph{Liquidity Provision}
 JKL can be allocated into a liquidity pool to earn rewards. 
 
-\subsubsection{JWL}
-JWL is the second native token to the Jackal Protocol. JWL tokens are immutable, meaning that there is a finite number of tokens that will be minted at the genesis of the Jackal Protocol. At genesis, there is no utility for the JWL token, and these tokens should be treated as such. 
-
 \section{Use Cases}
-The Jackal Labs team will launch six decentralized applications to feature the power of the Jackal Protocol at genesis. Jackal Storage is a self-custodial and private cloud data storage product. Retriever Name Service is an inter-blockchain communication name service for the entire Cosmos ecosystem for seamless organization and efficiency when using multiple blockchains. Jackal Web Hosting is a fully open HTTP gateway for static websites on Jackal Storage. Jackal Swap is a decentralized token exchange for Cosmos-based tokens. Jackal Sign is a digital signature service that allows users to collect signatures from Jackal users. Jackal Manager is a decentralized password manager for web2 applications built with the Jackal Wallet and Jackal Storage. 
+The Jackal Labs team will launch six decentralized applications to feature the power of the Jackal Protocol at genesis. Jackal Storage is a self-custodial and private cloud data storage product. Retriever Name Service is an inter-blockchain communication name service for the entire Cosmos ecosystem for seamless organization and efficiency when using multiple blockchains. Jackal Web Hosting is a fully open HTTP gateway for static websites on Jackal Storage. 
 
 Additional decentralized applications can be created by the Jackal Community using CosmWasm smart contracts. 
 
